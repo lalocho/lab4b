@@ -58,25 +58,20 @@ def solution_c():
     word_input = input("word you want to check anagrams for")
     anagram_printer(word_input, dict)
     print("load factor is ", load_factor(dict))
-    print("average collision is ", average_collision(dict)
-
-
-# used to calculate average
-# uses counter included in hashtable class
+    print("average collision is ", average_collision(dict))
+# used to calculate average collision
 def average_collision(dict):
     length = len(dict.table)
 
     return dict.collision_counter/length
 
 # used to calculate load factor
-# uses counter included in hashtable class
+# uses built int to class input counter
 def load_factor(dict):
 
     length = len(dict.table)
     return dict.input_counter / length
-
-
-# prints all anagrams of a word that are part of the dictionary
+# used to print anagrams of a word that exist in dictionary
 def anagram_printer(key,dict):
 
     anagrams = all_perms(key)
@@ -84,7 +79,7 @@ def anagram_printer(key,dict):
         if dict.search_a(anagrams[i]):
             print(anagrams[i])
 
-# computes all permutations of a word and returns a list/array containing them
+# computes all anagrams of a word and returns them in a list/array
 def all_perms(elements):
     temp_word = ""
     if len(elements) <=1:

@@ -43,7 +43,7 @@ class ChainingHashTable:
 
     def insert_b(self, item):
         # get the bucket list where this item will go.
-        bucket = hash(item) % len(self.table)
+        bucket = (hash(item))**3 % len(self.table)
         # inserts Node into the beginning setting whatever was already inside as .next
         temp_node = self.table[bucket]
         while temp_node is not None:
@@ -54,7 +54,7 @@ class ChainingHashTable:
 
     def insert_c(self, item):
         # get the bucket list where this item will go.
-        bucket = hash(item) % len(self.table)
+        bucket = (hash(item))**2 % len(self.table)
         # inserts Node into the beginning setting whatever was already inside as .next
         temp_node = self.table[bucket]
         while temp_node is not None:
@@ -77,7 +77,7 @@ class ChainingHashTable:
 
     def search_b(self, key):
         # get the bucket list where this key would be.
-        bucket = hash(key) % len(self.table)
+        bucket = (hash(key))**3 % len(self.table)
         temp_node = self.table[bucket]
         while temp_node is not None:
             if temp_node.password == key:
@@ -87,7 +87,7 @@ class ChainingHashTable:
 
     def search_c(self, key):
         # get the bucket list where this key would be.
-        bucket = hash(key) % len(self.table)
+        bucket = (hash(key))**2 % len(self.table)
         temp_node = self.table[bucket]
         while temp_node is not None:
             if temp_node.password == key:
