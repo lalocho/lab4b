@@ -8,7 +8,7 @@ def solution_a():
     f = open('test.txt')
     line = f.readline()
     # Size is set so the load factor is .75
-    dict = ChainingHashTable(473312)
+    dict = ChainingHashTable(10000)
     while line:
         # getting only the passwords from each line
         try:  # ignores line if irregularity with data
@@ -23,10 +23,10 @@ def solution_a():
     print("load factor is ",load_factor(dict))
     print("average collision is ", average_collision(dict))
 def solution_b():
-    f = open('test.txt')
+    f = open('test3.txt')
     line = f.readline()
     # Size is set so the load factor is .75
-    dict = ChainingHashTable(473312)
+    dict = ChainingHashTable(100)
     while line:
         # getting only the passwords from each line
         try:  # ignores line if irregularity with data
@@ -42,10 +42,10 @@ def solution_b():
     print("average collision is ", average_collision(dict))
 
 def solution_c():
-    f = open('test.txt')
+    f = open('test3.txt')
     line = f.readline()
     # Size is set so the load factor is .75
-    dict = ChainingHashTable(473312)
+    dict = ChainingHashTable(100)
     while line:
         # getting only the passwords from each line
         try:  # ignores line if irregularity with data
@@ -94,4 +94,6 @@ def all_perms(elements):
 
 def main():
     solution_a()
+    #solution_b()
+    #solution_c()
 main()
